@@ -1,0 +1,13 @@
+.detailsChart{
+    width: 260px;
+    height: 260px;
+    background-color: #282D30;
+    color: #fff;
+}
+
+@media screen and (max-width:1200px) {
+    .detailsChart{
+        width: 200px;
+        height: 200px;
+    }
+}

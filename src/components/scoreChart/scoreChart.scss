@@ -1,0 +1,39 @@
+.scoreChart{
+    height: 260px;
+    width: 260px;
+    position: relative;
+    background-color: #FBFBFB;
+    .title{
+        position: absolute;
+        top: 20px;
+        left: 30px;
+        margin: 0;
+        font-weight: bold;
+    }
+    .text{
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%,-50%);
+        text-align: center;
+        color: #74798C;
+        font-weight: 700;
+        width: 100px;
+        margin: 0;
+        line-height: 1.5;
+        .percent{
+            font-size: 26px;
+            display: block;
+            color: #282D30;
+        }
+    }
+}
+
+@media screen and (max-width:1200px) {
+
+    .scoreChart{
+        height: 200px;
+        width: 200px;
+
+    }
+}

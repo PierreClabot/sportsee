@@ -1,0 +1,35 @@
+.container-lineChart{
+    background-color: #ff0000;
+    width: 260px;
+    position: relative;
+    .title{
+        position: absolute;
+        top: 10px;
+        left: 30px;
+        color: rgba(255, 255, 255, 0.504);
+        font-size: 15px;
+        width: 150px;
+        font-weight: bold;
+    }
+    .custom-tooltip{
+        background-color: #fff;
+        color: #000;
+        font-weight: bold;
+        width: 40px;
+        height: 25px;
+        font-size: 8px;
+        text-align: center;
+    }
+
+
+}
+
+@media screen and (max-width:1200px) {
+
+    .container-lineChart{
+        width: 200px;
+        height: 200px;
+    
+    }
+
+}

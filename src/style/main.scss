@@ -1,0 +1,18 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;500;700&display=swap');
+
+@import "./../components/horizontalMenu/horizontalMenu.scss";
+
+@import "./../components/verticalMenu/verticalMenu.scss";
+
+@import "./../components/userData/userData.scss";
+@import "./../components/dailyActivity/dailyActivity.scss";
+@import "./../components/cardUserData/cardUserData.scss";
+@import "./../components/timeSession/timeSession.scss";
+@import "./../components/detailsChart/detailsChart.scss";
+@import "./../components/scoreChart/scoreChart.scss";
+
+@import "./../pages/dashboard/dashboard.scss";
+
+body{
+    overflow-y: hidden;
+}

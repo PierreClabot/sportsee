@@ -1,0 +1,33 @@
+.dailyActivity{
+    height: 300px;
+    width: 100%;
+    position: relative;
+    p{
+        position: absolute;
+        left: 50px;
+        top: 10px;
+        font-weight: 700;
+    }
+}
+.custom-tooltip{
+    background-color: #E60000;
+    color: #fff;
+    width: 40px;
+    height: 65px;
+    font-size: 8px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: column;
+}
+
+@media screen and (max-width:1200px) {
+
+    .dailyActivity{
+        height: 300px;
+        width: 700px;
+
+
+    }
+
+}

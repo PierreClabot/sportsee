@@ -1,0 +1,69 @@
+.card{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 260px;
+    height: 125px;
+    background-color: #FBFBFB;
+    
+    .icone{
+        width: 60px;
+        height: 60px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 10px;
+        &.calories{
+            background-color: #fbeaea;
+        }
+        &.proteines{
+            background-color: #e9f4fb;
+        }
+        &.glucides{
+            background-color: #fbf6e5;
+        }
+        &.lipides{
+            background-color: #fbeaef;
+        }
+    }
+
+    .info{
+        width: 100px;
+        margin-left: 30px;
+        .count{
+            font-size: 20px;
+            color: #282D30;
+            font-weight: 700;
+            margin-bottom: 5px;
+        }
+        .type{
+            font-size: 14px;
+            color: #74798C;
+            font-weight: 500;
+        }
+    }
+}
+
+@media screen and (max-width:1200px) {
+
+    .card{
+
+        width: 150px;
+        height: 80px;
+
+        
+        .icone{
+            width: 30px;
+            height: 30px;
+
+        }
+    
+        .info{
+            width: 50px;
+            margin-left: 10px;
+            .count{
+                font-size: 14px;
+            }
+        }
+    }
+}
