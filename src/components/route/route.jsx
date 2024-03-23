@@ -4,6 +4,7 @@ import {
   } from "react-router-dom";
   
 import Dashboard from "../../pages/dashboard/dashboard";
+import ErrorPage from "../../pages/errorPage/errorPage";
 
 function Route(){
     const router = createBrowserRouter([
@@ -14,6 +15,11 @@ function Route(){
         {
           path: "",
           element: <Dashboard />,
+        }
+        ,
+        {
+          path: "/error",
+          element: <ErrorPage error='404' text="Identifiant non trouvé"/>,
         }
       ]);
     

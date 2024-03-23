@@ -15,6 +15,8 @@ import DetailsChart from "../../components/detailsChart/detailsChart";
 import ScoreChart from "../../components/scoreChart/scoreChart";
 import Api from "../../api/api";
 
+import ErrorPage from "../errorPage/errorPage";
+
 import { defaultUserID } from "../../config/config";
 
 function Dashboard() { 
@@ -23,9 +25,13 @@ function Dashboard() {
 const { id } = useParams();
 
 let userId
-id ? userId = id : userId = 18
+id ? userId = id : userId = defaultUserID
 
-let [load,setLoad] = useState("")
+let [loadMainData,setLoadMainData] = useState("")
+let [loadActivityData,setLoadActivityData] = useState("")
+let [loadAverageSession,setLoadAverageSession] = useState("")
+let [loadUserPerformanceData,setLoadUserPerformanceData] = useState("")
+let [error,setError] = useState("")
 let [userData,setUserData] = useState("")
 let [userActivity,setUserActivity] = useState("")
 let [averageSessions,setAverageSessions] = useState("")
@@ -37,10 +43,13 @@ useEffect(()=>{
 
     function getMainData(){
         const api = new Api();
-        api.getUserData(userId)
+        return api.getUserData(userId)
         .then(res=>{
             setUserData(new UserMainData(res))
-            setLoad(true);
+            setLoadMainData(true);
+        })
+        .catch(res=>{
+            setError(res.message)
         })
     }
 
@@ -49,6 +58,10 @@ useEffect(()=>{
         api.getUserActivity(userId)
         .then(res=>{
             setUserActivity(new UserActivity(res))
+            setLoadActivityData(true)
+        })
+        .catch(res=>{
+            setError(res.message)
         })
     }
 
@@ -57,6 +70,10 @@ useEffect(()=>{
         api.getAverageSession(userId)
         .then(res=>{
             setAverageSessions(new UserAverageSession(res))
+            setLoadAverageSession(true)
+        })
+        .catch(res=>{
+            setError(res.message)
         })
     }
 
@@ -65,6 +82,10 @@ useEffect(()=>{
         api.getUserPerformance(userId)
         .then(res=>{
             setUserPerformance(new UserPerformance(res))
+            setLoadUserPerformanceData(true)
+        })
+        .catch(res=>{
+            setError(res.message)
         })
     }
 
@@ -74,9 +95,14 @@ useEffect(()=>{
     getAverageSession()
     getUserPerformance();
 
+
 },[id])
-    
-if(!load) return
+if(error){
+    let errorStatus = error.split("|")[0];
+    let textError = error.split("|")[1];
+    return (<ErrorPage error={errorStatus} text={textError} />)   
+} 
+if(!loadMainData && !loadActivityData && !loadAverageSession && !loadUserPerformanceData) return
 
   return (
     <>

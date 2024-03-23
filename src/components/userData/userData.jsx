@@ -4,6 +4,9 @@ import iconProtein from "../../assets/iconeProtein.svg"
 import iconCarbohydrate from "../../assets/iconCarbohydrate.svg"  
 import iconLipid from "../../assets/iconLipid.svg"  
 
+import PropTypes from 'prop-types';
+import KeyData from "../../models/keyData";
+
 function UserData(props){
     if(!props.data){
         return null
@@ -44,4 +47,7 @@ function UserData(props){
     )
 }
 
+UserData.propTypes = {
+    data : PropTypes.instanceOf(KeyData)
+}
 export default UserData

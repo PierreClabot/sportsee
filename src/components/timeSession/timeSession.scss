@@ -1,7 +1,11 @@
 .container-lineChart{
     background-color: #ff0000;
     width: 260px;
+    height: 260px;
+    box-sizing: border-box;
+    padding: 1rem;
     position: relative;
+    border-radius: 5px;
     .title{
         position: absolute;
         top: 10px;
@@ -29,7 +33,7 @@
     .container-lineChart{
         width: 200px;
         height: 200px;
-    
+        padding: 0.5rem;
     }
 
 }

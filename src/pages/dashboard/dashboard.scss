@@ -34,3 +34,33 @@
         }
     }
 }
+
+@media screen and (max-width:1200px) {
+
+    .app{
+
+        main{
+
+            .dashboard{
+                margin: 25px auto;
+                .textUser{
+
+                    p{
+                        margin-top: 10px;
+                        font-size: 18px;
+                    }
+                }
+                .detailsUser{
+                    display: flex;
+                    justify-content: space-between;
+                    gap: 40px;
+                }
+            }
+            .rowChart{
+                display: flex;
+                gap: 30px;
+            }
+        }
+    }
+
+}

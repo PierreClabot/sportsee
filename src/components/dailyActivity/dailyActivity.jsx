@@ -1,9 +1,11 @@
 import React, { PureComponent } from 'react';
 import { BarChart, Bar, Rectangle, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer, Label } from 'recharts';
+import PropTypes from 'prop-types';
+import Session from '../../models/session';
 
 function DailyActivity(props){
 
-
+if(!props.data) return;
 const CustomTooltip = ({ active, payload, label }) => {
   if (active && payload && payload.length) {
     return (
@@ -53,4 +55,7 @@ const CustomTooltip = ({ active, payload, label }) => {
 
 }
 
+DailyActivity.propTypes={
+  data : PropTypes.arrayOf(PropTypes.instanceOf(Session))
+}
 export default DailyActivity

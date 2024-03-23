@@ -39,12 +39,9 @@
     .verticalMenu{
         width: 80px;
         .icones{
-
             gap: 25px;
 
             .item{
-    
-    
                 width: 42px;
                 height: 42px;
                 img{
@@ -52,6 +49,9 @@
                 }
 
             }
+        }
+        .copyright{
+            font-size: 10px;
         }
 
     }

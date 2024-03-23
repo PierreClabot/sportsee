@@ -1,5 +1,6 @@
 import React from 'react';
 import { RadialBarChart, RadialBar, ResponsiveContainer,PolarAngleAxis,Text} from 'recharts';
+import PropTypes from 'prop-types';
 
 
 function ScoreChart(props){
@@ -32,4 +33,9 @@ function ScoreChart(props){
 
 }
 
+ScoreChart.propTypes = {
+  data : PropTypes.arrayOf(PropTypes.shape({
+    todayScore:PropTypes.number
+  }))
+}
 export default ScoreChart

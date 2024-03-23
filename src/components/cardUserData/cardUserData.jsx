@@ -1,7 +1,11 @@
+import PropTypes from 'prop-types';
+
+
 function CardUserData(props){
     if(!props){
         return null
     }
+
     return(
         <div className="card">
             <div className={"icone "+props.type.toLowerCase()}>
@@ -13,6 +17,12 @@ function CardUserData(props){
             </div>
         </div>
     )
+}
+
+CardUserData.propTypes = {
+    img : PropTypes.string,
+    count : PropTypes.string,
+    type : PropTypes.string
 }
 
 export default CardUserData

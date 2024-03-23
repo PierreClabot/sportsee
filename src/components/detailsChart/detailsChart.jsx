@@ -1,6 +1,7 @@
 import React from 'react';
 import { Radar, RadarChart, PolarGrid, PolarAngleAxis, ResponsiveContainer, PolarRadiusAxis,Text } from 'recharts';
-
+import PropTypes from 'prop-types';
+import UserPerformanceData from '../../models/userPerformanceData';
 
 function DetailsChart(props){
     
@@ -55,7 +56,7 @@ function DetailsChart(props){
             <ResponsiveContainer width="100%" height="100%">
             <RadarChart cx="50%" cy="50%" outerRadius="80%" data={reorderedData} margin={{ top: 50, right: 20, bottom: 20, left: 10 }} >
                 <PolarGrid gridType="polygon" radialLines={false}/>
-                <PolarAngleAxis dataKey="name" stroke='#fff'  tickLine={{ length: 0 }} tick={props => renderPolarAngleAxis(props)} fontSize={12} />
+                <PolarAngleAxis dataKey="name"  stroke='#fff' tickLine={{ length: 0 }} tick={props => renderPolarAngleAxis(props)} fontSize={12} />
                 <PolarRadiusAxis tick={false} axisLine={false} />
                 <Radar dataKey="value"  stroke="##FF0101B2" fill="#FF0101" fillOpacity={0.7} />
             </RadarChart>
@@ -63,6 +64,10 @@ function DetailsChart(props){
         </div>
 
       );
+}
+
+DetailsChart.propTypes = {
+  data : PropTypes.arrayOf(PropTypes.instanceOf(UserPerformanceData))
 }
 
 export default DetailsChart

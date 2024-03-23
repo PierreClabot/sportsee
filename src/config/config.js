@@ -4,5 +4,5 @@ export const environments = {
 }
 
 
-export const currentEnvironment = environments.dev 
-export const defaultUserID = 12
+export const currentEnvironment = environments.prod
+export const defaultUserID = 18
